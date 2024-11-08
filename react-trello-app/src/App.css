@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+}
+.header__container {
+  width: 100vw;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  background-color: #1777ff;
+}
+.header__logo {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAAA8CAMAAADWtUEnAAAAV1BMVEX///8jHyAjHyD///////////////////////////////////////////////////////////////////////////////////////////////////////98ygg7AAAAHHRSTlMAAQIQIC4wPUBQYHCAgpCcoLDAytDc4Ovw8fP+YuFlbAAAA8hJREFUeF7tmOuSnCAQhWe2CUHoGCSEkMT3f86sM2gfmYlLSqt2K+X5tcyKfPQVvPx/OnXq1Kl+fFXStwGFaRDoI/F1402+wN5kPxJgujPlaaDGu4YPxKeRicvAtUw0WzoO0I/g1VQGqiVwtzX8NY5Nxxxe1esWPlOQIhqw38cnQV2k2LzikjGOhwgTQgNiKEzTo5Tvg/R2Eo8Nwih6VGM22sLH6G1zORaQtx7aFiWxGaRLGyArceGzcUs8+A043JsBb2dqA8RMUvV4y4JxYGuMsWEcs9rmUxmSoiuw3aURsHlMHvmytIiHpbRj5k6oPSZFEgcfBohFU0G4P5eZMhxbrUYHu7WDybLTRwFiPqaW0hVKiQEHU145mG/DoA4CBA/Z7Y6BncKgg1kcDA9HOgzQgG2IYw4QgODBJ1lrIF0yVZuxhwEOsBpDPyVjDElB7gWq/DQgkqvLQjoKUGFw2SVblL9Zxn8uGdAVQ9MSE5keppsRFJiHEAbWOwEZm5SZYTmXZX6XhluoghjQoQE1eDu6caV+F2BZOGJCBx3rzjxT2WqGQob7rKyqfht3AXaFAHMw55pvNk4SAxqcgOncTUkEGmgXoF81ESRDH1EUquJrNCDD3wOeWLK3al+SkKxQH78yF6y4RFovJlewvQTVINPy0s60ZPHWYUH8pR4PDz3NSalnviA10F+giVjIYIup1gooma65AhxW75LciHpxJs98kYRDwYYSdL8grZHbAWs9eNgu5i3ywpKp8GUlTh2wAjiYa+RnvRMQPUxVU7NgXZ75NOzIQAXIJFYL8PNlPyDaAz1s0boJ+S5fsI0NEI6x7tT+EMCMl20lfGBd5KPSkB0+D5ZNkC1mNyBEvHgYts4PfCqujqYOu7A0lCisuwH71bsiNqZVO4i3Leg84hbMD7D318WYTtywHzDKeuIxBMRmZSc+eaSHiwyVZ/F4uB8QiwzENiZQfdQDJg9XYYry4iBz2q+dtaoioyWicK7DryAKHB6QnoFvXCbFGmu7c9R6dlBQuS4OGpZyGZsg8I0d8I3OZNhzrev1Xz994LnEV3dvLG3djPC9bMILrRU+EV+OAcTDZhBrVhEQFuv5T3cARErlv9+qzyYHAjJUnKG6TqFydRL9+QsGkTzE6FGAAQDVk9ghJPRUIrUo6w75JM0H2gT047ZwhwYrgp29jTJhJjCFOcBHEJ1W1yIdJu46/mpAepMwiJmUz/JR1Hj3ZO+qD2PyFpgns6a5X8eJVdru5ifwl5cJ8b11Ap6A76cT8AS8Xk/AfdqJdwL+AZ4nJzaBqOx2AAAAAElFTkSuQmCC)
+    no-repeat 100% 0 / cover;
+  width: 80px;
+  height: 30px;
+  position: absolute;
+  left: 50%;
+  opacity: 0.5;
+}
+.header__right {
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+.header__avatar {
+  width: 32px;
+  height: 32px;
+  margin-right: 5px;
+}
+.header__avatar img {
+  width: 100%;
+  border-radius: 50%;
+}
+.container {
+  width: 100vw;
+  height: calc(100vh - 70px);
+  margin-top: 10px;
+}
+.listContainer {
+  height: 100%;
+  display: flex;
+  gap: 10px;
+}
+.ant-space {
+  height: 100%;
+  overflow-y: auto;
+}
+.ant-card-meta-description {
+  float: right;
+}
+.btn__delete{
+  display: flex;
+  justify-content: flex-end;
+}
