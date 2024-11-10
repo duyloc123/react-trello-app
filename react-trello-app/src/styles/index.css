@@ -39,7 +39,7 @@ body {
 .container {
   width: 100vw;
   height: calc(100vh - 70px);
-  margin-top: 10px;
+  margin: 10px;
 }
 .listContainer {
   height: 100%;
@@ -56,4 +56,34 @@ body {
 .btn__delete{
   display: flex;
   justify-content: flex-end;
+}
+
+.listContainer {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  white-space: nowrap;
+  height: 100%;
+}
+
+.card {
+  margin-top: 10px;
+}
+
+.column {
+  border-radius: 3px;
+  min-width: 300px;
+  max-width: 300px;
+  max-height: 100%;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.column .ant-card-body {
+  padding: 12px;
+}
+
+.column_content {
+  min-height: 10px;
 }
