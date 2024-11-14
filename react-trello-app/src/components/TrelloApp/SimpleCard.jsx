@@ -1,5 +1,5 @@
-import React from 'react';
-import { Draggable } from 'react-beautiful-dnd';
+import React from "react";
+import { Draggable } from "react-beautiful-dnd";
 import {
   DeleteOutlined,
   UserOutlined,
@@ -8,11 +8,11 @@ import {
   EditOutlined,
 } from "@ant-design/icons";
 import { Card, Button, Tooltip, Avatar } from "antd";
+import { useAppContext } from "../../context/TrelloContext";
 
-function SimpleCard({
-  cardIndex,
-  card,
-}) {
+function SimpleCard({ cardIndex, card }) {
+  const { deleteCard } = useAppContext();
+
   return (
     <>
       <Draggable draggableId={String(card.id)} index={cardIndex}>
@@ -21,7 +21,8 @@ function SimpleCard({
             ref={provided.innerRef}
             {...provided.draggableProps}
             {...provided.dragHandleProps}
-            className='card'
+            className="card"
+            key={card.id}
           >
             <Card
               cover={
@@ -44,6 +45,7 @@ function SimpleCard({
                   <Button
                     icon={<DeleteOutlined />}
                     style={{ border: "none" }}
+                    onClick={() => deleteCard(card.id)}
                   />
                 </Tooltip>,
               ]}
@@ -84,7 +86,7 @@ function SimpleCard({
         )}
       </Draggable>
     </>
-  )
+  );
 }
 
-export default SimpleCard
+export default SimpleCard;
