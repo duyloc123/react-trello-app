@@ -171,6 +171,7 @@ function Column({ columnIndex, title, columnId, cards }) {
                           key={card.id}
                           cardIndex={cardIndex}
                           card={card}
+                          columnId={columnId}
                         />
                       );
                     })}

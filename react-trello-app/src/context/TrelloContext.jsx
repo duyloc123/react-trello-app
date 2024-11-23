@@ -29,7 +29,6 @@ export const TrelloProvider = ({ children }) => {
       return {
         ...prev,
         columns: [...prev.columns, `${newList}`],
-        cards: { ...prev.cards },
         lists: {
           ...prev.lists,
           [`${newList}`]: {
@@ -42,7 +41,7 @@ export const TrelloProvider = ({ children }) => {
     });
   };
 
-  const handleAddCard = (cardId) => {
+  const handleAddCard = (listId) => {
     const quantityCards = Object.keys(trello.cards).length;
     const newCardId = `card${quantityCards + 1}`;
     const cardItem = {
@@ -58,8 +57,8 @@ export const TrelloProvider = ({ children }) => {
         },
         lists: {
           ...prev.lists,
-          [cardId]: {
-            ...prev.lists[cardId],
+          [listId]: {
+            ...prev.lists[listId],
             cards: [...prev.lists[cardId].cards, newCardId],
           },
         },
@@ -78,21 +77,22 @@ export const TrelloProvider = ({ children }) => {
     });
   };
 
-  const deleteCard = (cartId) => {
-    const newLists = { ...trello.lists };
-    const newCards = { ...trello.cards };
-    Object.keys(newLists).forEach((listId) => {
-      newLists[listId].cards = newLists[listId].cards.filter(
-        (card) => card !== cartId
-      );
-      delete newCards[cartId];
-
-      setTrello((prev) => ({
-        ...prev,
-        lists: newLists,
+  const deleteCard = (cardId, columnId) => {
+    setTrello(prevState => {
+      const newCards = {...prevState.cards };
+      delete newCards[cardId];
+      return {
+        ...prevState,
         cards: newCards,
-      }));
-    });
+        lists: {
+          ...prevState.lists,
+          [columnId]: {
+            ...prevState.lists[columnId],
+            cards: prevState.lists[columnId].cards.filter(card => card !== cardId)
+          }
+        }
+      }
+    })
   };
 
   // Drap drop context

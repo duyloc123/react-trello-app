@@ -10,7 +10,7 @@ import {
 import { Card, Button, Tooltip, Avatar } from "antd";
 import { useAppContext } from "../../context/TrelloContext";
 
-function SimpleCard({ cardIndex, card }) {
+function SimpleCard({ cardIndex, card, columnId }) {
   const { deleteCard } = useAppContext();
 
   return (
@@ -45,7 +45,7 @@ function SimpleCard({ cardIndex, card }) {
                   <Button
                     icon={<DeleteOutlined />}
                     style={{ border: "none" }}
-                    onClick={() => deleteCard(card.id)}
+                    onClick={() => deleteCard(card.id, columnId)}
                   />
                 </Tooltip>,
               ]}
