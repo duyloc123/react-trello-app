@@ -6,7 +6,7 @@ import { DragDropContext, Droppable } from "react-beautiful-dnd";
 // components
 import ImageSingle from "../../components/TrelloApp/ImageSingle";
 import Column from "../../components/TrelloApp/Column";
-
+``
 // Ant design
 import { PlusOutlined } from "@ant-design/icons";
 
